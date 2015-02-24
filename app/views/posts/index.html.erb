@@ -1,0 +1,23 @@
+<h1>Welcome to my blog</h1>
+
+
+    <% @posts.each do |post| %>
+      
+       <h2><%= link_to post.title, post %></h2>
+        <p>
+          <%=time_ago_in_words post.created_at%>
+
+          </p>
+
+        <p><%= truncate post.text %></p>
+
+       <!--  <%= link_to 'Show', post %></td>
+        <%= link_to 'Edit', edit_post_path(post) %></td>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      
+    <% end %>
+  
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
